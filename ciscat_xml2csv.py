@@ -6,8 +6,8 @@ import xml.etree.ElementTree as etree
 import html2text
 
 __author__ = "Xavier Garceau-Aranda"
-__license__ = "GPL"
-__version__ = "2"
+__license__ = "GPL v2"
+__version__ = "0.2"
 __maintainer__ = "Xavier Garceau-Aranda"
 __email__ = "xavier.garceau-aranda@owasp.org"
 __status__ = "Testing"
@@ -35,7 +35,8 @@ First step is to build a dict with Rule ids and pass/fail results
 XML structure:
 <Benchmark xmlns="http://checklists.nist.gov/xccdf/1.2"
    <TestResult end-time="2015-12-18T10:10:51.776+01:00">
-         <rule-result idref="xccdf_org.cisecurity.benchmarks_rule_1.1.1_L1_Set_Enforce_password_history_to_24_or_more_passwords"
+         <rule-result idref="xccdf_org.cisecurity.benchmarks_rule_1.1.1_L1_ ...
+         Set_Enforce_password_history_to_24_or_more_passwords"
 """
 
 result_dict = dict()  # contains id-pass/fail/error/notselected results
@@ -57,7 +58,8 @@ XML structure:
 <Benchmark xmlns="http://checklists.nist.gov/xccdf/1.2"
     <Group id="xccdf_org.cisecurity.benchmarks_group_1_Account_Policies">
         <Group id="xccdf_org.cisecurity.benchmarks_group_1.1_Password_Policy">
-            <Rule id="xccdf_org.cisecurity.benchmarks_rule_1.1.1_L1_Set_Enforce_password_history_to_24_or_more_passwords">
+            <Rule id="xccdf_org.cisecurity.benchmarks_rule_1.1.1_L1_Set_ ...
+            Enforce_password_history_to_24_or_more_passwords">
 
 """
 
@@ -205,7 +207,7 @@ def recursive_iter_over_group(node, level):
 entry_list = []
 for child in root:  # iterate over root
     if 'Group' in child.tag:  # each Group is a branch
-        recursive_iter_over_group(child, 0)  # iterate over each group recursively
+        recursive_iter_over_group(child, 0)  # recursive iterate over each group
 
 """
 Third step is to create a csv file with all the info
