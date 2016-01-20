@@ -60,7 +60,6 @@ XML structure:
         <Group id="xccdf_org.cisecurity.benchmarks_group_1.1_Password_Policy">
             <Rule id="xccdf_org.cisecurity.benchmarks_rule_1.1.1_L1_Set_ ...
             Enforce_password_history_to_24_or_more_passwords">
-
 """
 
 
