@@ -130,10 +130,24 @@ def remediation_node_to_text(node):
     h.ignore_links = True
     html = etree.tostring(node)
 
+    """
     text = str(h.handle(str(html))
                 .replace('\\n', ' ')
                 .replace('b\'', ' ')
                 .replace('\\\\', '\\'))
+    """
+
+    text = str(h.handle(str(html))
+                .replace('b\'\\n ', '')
+                .replace('\\n \\n \'', '')
+                .replace('\\n \\n ', '')
+                .replace('\\n ', '')
+                .replace('\\n \\n', '')
+                .replace('\\n', '')
+                .replace('"', '\'')
+                .replace('\\\'', '\'')
+                .replace('\\\\\\', '\\')
+                .strip())
 
     text = re.sub(r'\s+', ' ', text)
 
