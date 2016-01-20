@@ -17,4 +17,5 @@ We can easilly modify this Excel to a nice, client-friendly Workbook:
 ![alt tag](https://github.com/j4v/CISCAT_xml2csv/blob/master/screenshots/img4.png)
 
 TODO: 
+- Improve remediation parsing
 - Auto-translate remediations to Spanish
